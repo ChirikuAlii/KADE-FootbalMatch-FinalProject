@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import chirikualii.com.footballapps.R
+import chirikualii.com.footballapps.common.DATA_TEAM
 import chirikualii.com.footballapps.presentation.model.Team
 import chirikualii.com.footballapps.presentation.ui.teams.detailteam.DetailTeamActivity
 import com.bumptech.glide.Glide
@@ -40,7 +41,9 @@ class RecyclerViewTeamAdapter(val teamList: List<Team>) : RecyclerView.Adapter<R
             itemView.setOnClickListener {
                 //pindah halaman
                 Intent(itemView.context,DetailTeamActivity::class.java).apply {
+                    putExtra(DATA_TEAM,team)
                     itemView.context.startActivity(this)
+
                 }
             }
 

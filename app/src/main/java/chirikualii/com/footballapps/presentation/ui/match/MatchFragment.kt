@@ -53,15 +53,9 @@ class MatchFragment : BaseFragment(), IMatchView {
 
             }
         }
-
-        viewPager.apply {
-            adapter = PagerAdapterMatch(childFragmentManager,NextMatchFragment(),PrevMatchFragment(), NEXT_MATCH,
-                PREV_MATCH)
-        }
-
-        tabLayout.apply {
-            setupWithViewPager(viewPager)
-        }
+        viewPager.adapter = PagerAdapterMatch(childFragmentManager,NextMatchFragment(),PrevMatchFragment(), NEXT_MATCH,
+            PREV_MATCH)
+        tabLayout.setupWithViewPager(viewPager)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {

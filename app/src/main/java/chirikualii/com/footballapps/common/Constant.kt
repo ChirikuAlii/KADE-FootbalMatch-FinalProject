@@ -3,11 +3,12 @@ package chirikualii.com.footballapps.common
 /**
  * Created by chirikualii on {DATE}
  */
-//intent key
+//intent key or bundle
 const val DATA_MATCH = "data match"
 const val DATA_RESULT_SEARCH = "result search"
 const val DATA_KEY_RESULT_SEARCH = "key search"
 const val DATA_TEAM = "data team"
+const val DATA_TEAM_OVERVIEW = "data team overview"
 
 
 //name bottom nav
