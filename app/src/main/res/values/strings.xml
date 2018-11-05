@@ -1,0 +1,41 @@
+<resources>
+	<string name="app_name">FootballApps</string>
+	
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+	<string name="match">Match</string>
+	<string name="teams">Teams</string>
+	<string name="favorite">Favorite</string>
+	<string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non nunc feugiat, euismod lacus
+		vel, hendrerit felis. Mauris eget orci sit amet lectus suscipit accumsan eu a lacus. Maecenas nec sapien sit
+		amet velit porta imperdiet. Maecenas id aliquam metus. Mauris iaculis malesuada orci vitae accumsan. Vestibulum
+		eu orci vitae est dictum ullamcorper. Curabitur elementum nisi ac eleifend interdum. Aenean gravida magna
+		maximus commodo efficitur. Sed eu nulla a neque tincidunt malesuada eget sit amet est. Proin fermentum arcu
+		urna, nec iaculis metus egestas sit amet. Fusce ut porttitor nisi. Sed molestie, sapien quis accumsan luctus,
+		libero risus vulputate purus, sit amet tempus dolor diam non dolor. Sed mattis laoreet interdum. Vestibulum
+		vitae diam dui. Integer molestie felis scelerisque tempor blandit. Integer venenatis nec nisi nec placerat.
+		Maecenas tincidunt posuere feugiat. Cras porta augue sit amet luctus accumsan. Vivamus lacinia pellentesque
+		ligula sed varius. Etiam vehicula malesuada dignissim. Quisque sit amet erat diam. Aliquam nulla odio, congue
+		non dui sit amet, congue tempus nibh. Sed dignissim, libero et posuere fermentum, diam arcu ultricies leo, id
+		aliquet ipsum ante et nunc. Cras est purus, consequat vel euismod sed, malesuada at nulla. Maecenas erat nunc,
+		varius a leo eu, blandit ullamcorper metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+		posuere cubilia Curae; Nullam iaculis lectus non purus tempor efficitur. Donec dignissim massa sed interdum
+		finibus. Praesent ac nunc eget lectus vestibulum vestibulum eget a purus. Nullam accumsan mattis neque, sed
+		ultrices dui sollicitudin at. Vivamus purus enim, auctor quis nibh gravida, ultricies pretium orci. Suspendisse
+		molestie ex vel tellus vulputate scelerisque. Morbi odio erat, pellentesque eget hendrerit ac, aliquam ac odio.
+		Morbi ante nibh, hendrerit et erat a, ultrices vestibulum diam. Donec blandit fermentum lectus a placerat. Sed
+		posuere odio non enim luctus, vel ultricies velit lobortis. Cras condimentum quam ac dolor euismod, non tempor
+		velit vulputate. Nulla dolor tellus, commodo sed sagittis vel, placerat sed metus. Maecenas eget nulla non urna
+		ultricies varius. Donec faucibus diam non dui convallis egestas. Curabitur velit erat, commodo at nisi ut,
+		accumsan tristique risus. Sed vulputate, odio vel vestibulum aliquam, ante erat eleifend lectus, non sodales
+		lorem felis nec tellus. Mauris lorem justo, rutrum a pharetra eu, faucibus eu urna. Pellentesque elementum magna
+		sed mattis aliquet. Praesent efficitur libero a faucibus egestas.
+	</string>
+	
+	<string-array name="spinner_league">
+		<item>English Premier League</item>
+		<item>La Liga</item>
+		<item>Serie A</item>
+		<item>Bundesliga</item>
+	</string-array>
+</resources>
