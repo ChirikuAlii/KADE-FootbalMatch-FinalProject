@@ -7,10 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.common.DATA_MATCH
-import chirikualii.com.footballapps.common.MATCH
 import chirikualii.com.footballapps.common.toDate
 import chirikualii.com.footballapps.presentation.model.Event
-import chirikualii.com.footballapps.presentation.ui.match.detailmatch.DetailMatchActivity
+import chirikualii.com.footballapps.presentation.ui.detailmatch.DetailMatchActivity
 import kotlinx.android.synthetic.main.item_match.view.*
 
 /**

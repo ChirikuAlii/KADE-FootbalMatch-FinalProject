@@ -31,6 +31,8 @@
 		lorem felis nec tellus. Mauris lorem justo, rutrum a pharetra eu, faucibus eu urna. Pellentesque elementum magna
 		sed mattis aliquet. Praesent efficitur libero a faucibus egestas.
 	</string>
+	<string name="weight_kg">Weight (Kg)</string>
+	<string name="height_m">Height (m)</string>
 	
 	<string-array name="spinner_league">
 		<item>English Premier League</item>

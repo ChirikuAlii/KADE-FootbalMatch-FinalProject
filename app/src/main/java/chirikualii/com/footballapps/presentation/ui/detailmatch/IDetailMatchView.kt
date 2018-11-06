@@ -1,4 +1,4 @@
-package chirikualii.com.footballapps.presentation.ui.match.detailmatch
+package chirikualii.com.footballapps.presentation.ui.detailmatch
 
 import chirikualii.com.footballapps.presentation.base.BaseView
 

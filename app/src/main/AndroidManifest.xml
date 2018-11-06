@@ -19,11 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.ui.match.detailmatch.DetailMatchActivity">
+        <activity android:name=".presentation.ui.detailmatch.DetailMatchActivity">
         </activity>
         <activity android:name=".presentation.ui.resultsearch.ResultSearchActivity">
         </activity>
-        <activity android:name=".presentation.ui.teams.detailteam.DetailTeamActivity">
+        <activity android:name=".presentation.ui.detailteam.DetailTeamActivity">
+        </activity>
+        <activity android:name=".presentation.ui.detailteam.detailplayerteam.DetailPlayerActivity">
         </activity>
     </application>
 

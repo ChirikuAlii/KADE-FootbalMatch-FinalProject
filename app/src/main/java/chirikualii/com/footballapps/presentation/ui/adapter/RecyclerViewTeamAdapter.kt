@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.common.DATA_TEAM
 import chirikualii.com.footballapps.presentation.model.Team
-import chirikualii.com.footballapps.presentation.ui.teams.detailteam.DetailTeamActivity
+import chirikualii.com.footballapps.presentation.ui.detailteam.DetailTeamActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_team.view.*
 

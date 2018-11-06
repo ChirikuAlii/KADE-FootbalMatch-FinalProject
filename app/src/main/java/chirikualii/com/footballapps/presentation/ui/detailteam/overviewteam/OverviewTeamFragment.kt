@@ -1,4 +1,4 @@
-package chirikualii.com.footballapps.presentation.ui.teams.detailteam.overviewteam
+package chirikualii.com.footballapps.presentation.ui.detailteam.overviewteam
 
 
 import android.os.Bundle

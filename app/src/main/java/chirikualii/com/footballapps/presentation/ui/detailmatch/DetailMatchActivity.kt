@@ -1,11 +1,9 @@
-package chirikualii.com.footballapps.presentation.ui.match.detailmatch
+package chirikualii.com.footballapps.presentation.ui.detailmatch
 
 
 import android.os.Bundle
-import android.view.Menu
 import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.common.DATA_MATCH
-import chirikualii.com.footballapps.common.MATCH
 import chirikualii.com.footballapps.common.toDate
 import chirikualii.com.footballapps.presentation.base.BaseActivity
 import chirikualii.com.footballapps.presentation.model.Event

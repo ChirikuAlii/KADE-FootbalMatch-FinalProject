@@ -2,6 +2,7 @@ package chirikualii.com.footballapps.data.api
 
 import chirikualii.com.footballapps.BuildConfig
 import chirikualii.com.footballapps.data.api.model.EventResponse
+import chirikualii.com.footballapps.data.api.model.PlayersResponse
 import chirikualii.com.footballapps.data.api.model.SearchResponse
 import chirikualii.com.footballapps.data.api.model.TeamsResponse
 import io.reactivex.Flowable
@@ -36,10 +37,10 @@ interface ApiService {
         @Query("id")idLeague : String?
     ): Flowable<TeamsResponse>
 
-    @GET("/api/json/"+BuildConfig.TSDB_API_KEY +"/lookup_all_players.php")
+    @GET("/api/v1/json/"+BuildConfig.TSDB_API_KEY +"/lookup_all_players.php")
     fun getPlayersTeam(
         @Query("id") idTeam :String?
-    )
+    ) : Flowable<PlayersResponse>
 
     @GET("/api/v1/json/"+ BuildConfig.TSDB_API_KEY + "/searchevents.php")
     fun searchMatch(

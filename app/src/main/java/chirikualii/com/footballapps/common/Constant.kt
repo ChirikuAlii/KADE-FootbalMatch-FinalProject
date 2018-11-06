@@ -9,6 +9,8 @@ const val DATA_RESULT_SEARCH = "result search"
 const val DATA_KEY_RESULT_SEARCH = "key search"
 const val DATA_TEAM = "data team"
 const val DATA_TEAM_OVERVIEW = "data team overview"
+const val DATA_TEAM_PLAYERS = "data team players"
+const val DATA_DETAIL_PLAYERS = "data detail players"
 
 
 //name bottom nav

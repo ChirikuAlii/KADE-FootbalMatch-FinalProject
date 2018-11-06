@@ -6,7 +6,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:padding="4dp"
-		tools:context=".presentation.ui.match.detailmatch.DetailMatchActivity">
+		tools:context=".presentation.ui.detailmatch.DetailMatchActivity">
 	
 	<androidx.constraintlayout.widget.ConstraintLayout
 			android:layout_width="match_parent"

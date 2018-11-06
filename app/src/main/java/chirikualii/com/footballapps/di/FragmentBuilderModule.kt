@@ -5,6 +5,7 @@ import chirikualii.com.footballapps.presentation.ui.match.MatchFragment
 import chirikualii.com.footballapps.presentation.ui.match.nextmatch.NextMatchFragment
 import chirikualii.com.footballapps.presentation.ui.match.prevmatch.PrevMatchFragment
 import chirikualii.com.footballapps.presentation.ui.teams.TeamsFragment
+import chirikualii.com.footballapps.presentation.ui.detailteam.playerteam.PlayerFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -27,4 +28,7 @@ abstract class FragmentBuilderModule {
 
     @ContributesAndroidInjector
     abstract fun bindTeamFragment(): TeamsFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindPlayerFragment() : PlayerFragment
 }

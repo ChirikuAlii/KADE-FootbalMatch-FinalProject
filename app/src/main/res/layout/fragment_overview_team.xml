@@ -4,7 +4,7 @@
 			 android:layout_width="match_parent"
 			 android:layout_height="match_parent"
 			 android:padding="16dp"
-			 tools:context=".presentation.ui.teams.detailteam.overviewteam.OverviewTeamFragment">
+			 tools:context=".presentation.ui.detailteam.overviewteam.OverviewTeamFragment">
 	
 	<!-- TODO: Update blank fragment layout -->
 		<androidx.core.widget.NestedScrollView
