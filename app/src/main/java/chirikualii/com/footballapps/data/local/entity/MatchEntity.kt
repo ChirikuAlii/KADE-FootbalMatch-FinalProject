@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 /**
  * Created by chirikualii on {DATE}
  */
+
 @Entity (tableName = "match_table")
 data class MatchEntity(
     @PrimaryKey(autoGenerate = true)

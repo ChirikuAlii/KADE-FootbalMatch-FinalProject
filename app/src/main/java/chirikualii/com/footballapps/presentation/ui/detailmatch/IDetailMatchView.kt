@@ -12,4 +12,5 @@ interface IDetailMatchView : BaseView {
 
     fun addedToFavorite()
     fun deletedFromFavorite()
+    fun savedAsFavorite(isFavorite : Boolean)
 }

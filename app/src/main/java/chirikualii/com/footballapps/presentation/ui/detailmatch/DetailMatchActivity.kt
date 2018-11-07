@@ -13,12 +13,10 @@ import com.bumptech.glide.Glide
 
 import kotlinx.android.synthetic.main.activity_detail_match.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 class DetailMatchActivity : BaseActivity()  , IDetailMatchView {
-
 
     @Inject
     lateinit var presenter: DetailMatchPresenter
@@ -33,6 +31,9 @@ class DetailMatchActivity : BaseActivity()  , IDetailMatchView {
         presenter.bind(this)
         presenter.performLoadTeamBadge(data.idTeamHome, "Home")
         presenter.performLoadTeamBadge(data.idTeamAway, "Away")
+
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         txtDateMatch.text = data.dateMatch?.toDate()
 
         txtHomeTeamName?.text = data.homeTeamName
@@ -78,20 +79,25 @@ class DetailMatchActivity : BaseActivity()  , IDetailMatchView {
     override fun addedToFavorite() {
         menu?.clear()
         menuInflater.inflate(R.menu.menu_del_fav,menu)
-        toast("add favorite")
+        toast("added to favorite")
 
     }
 
     override fun deletedFromFavorite() {
         menu?.clear()
         menuInflater.inflate(R.menu.menu_add_fav,menu)
-        toast("del favorite")
+        toast("deleted from favorite")
 
     }
 
+    override fun savedAsFavorite(isFavorite: Boolean) {
+       val resMenu = if (isFavorite) R.menu.menu_del_fav else R.menu.menu_add_fav
+        menuInflater.inflate(resMenu,menu)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_add_fav,menu)
         this.menu=menu
+        presenter.performCheckDataInDb(data.idEvent ?: "")
         return super.onCreateOptionsMenu(menu)
 
     }

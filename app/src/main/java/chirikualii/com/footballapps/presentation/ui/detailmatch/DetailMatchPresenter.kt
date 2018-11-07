@@ -45,7 +45,16 @@ class DetailMatchPresenter @Inject constructor
     }
 
     override fun performCheckDataInDb(idEvent: String?) {
-
+        disposables.add(
+            eventRepo.checkEventInDb(idEvent)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    view?.savedAsFavorite(it)
+                },{
+                    view?.showMessage(it.message)
+                })
+        )
     }
 
     override fun performInsertEvent(event: Event?) {
@@ -83,9 +92,7 @@ class DetailMatchPresenter @Inject constructor
         )
     }
 
-    fun performLoadFavortie (){
 
-    }
 
 
 }

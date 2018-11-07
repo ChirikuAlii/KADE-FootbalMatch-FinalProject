@@ -170,4 +170,10 @@ class EventsRepo @Inject constructor(val service: ApiService ,val dao: MatchDao)
         return dao.deleteMatch(idEvent)
     }
 
+    fun checkEventInDb(idEvent: String?):Observable<Boolean> {
+       val result = dao.checkDataMatch(idEvent)
+
+        return Observable.just(result.isNotEmpty())
+    }
+
 }

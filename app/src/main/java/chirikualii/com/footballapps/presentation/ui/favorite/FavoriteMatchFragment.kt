@@ -21,7 +21,6 @@ class FavoriteMatchFragment : BaseFragment() , IFavoriteView {
 
     @Inject
     lateinit var presenter: FavoritePresenter
-
     override fun onAttach(context: Context?) {
         injectFragment(this)
         super.onAttach(context)
@@ -38,12 +37,12 @@ class FavoriteMatchFragment : BaseFragment() , IFavoriteView {
         super.onViewCreated(view, savedInstanceState)
         presenter.bind(this)
         recyclerViewMatch.layoutManager = LinearLayoutManager(context)
-        presenter.performLoadData()
+
 
     }
 
-    override fun showFavorite(event: List<Event>) {
-        recyclerViewMatch.adapter = RecyclerViewMatchAdapter(event)
+    override fun showFavorite(data: List<Any>) {
+        recyclerViewMatch.adapter = RecyclerViewMatchAdapter(data.filterIsInstance<Event>() )
     }
 
     override fun showMessage(message: String?) {
@@ -57,7 +56,7 @@ class FavoriteMatchFragment : BaseFragment() , IFavoriteView {
 
     override fun onResume() {
         super.onResume()
-        presenter.performLoadData()
+        presenter.performLoadData(key = FavoriteMatchFragment::class.java.simpleName)
     }
 
 

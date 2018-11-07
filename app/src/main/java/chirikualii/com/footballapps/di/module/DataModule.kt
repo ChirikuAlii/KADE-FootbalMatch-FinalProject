@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import chirikualii.com.footballapps.data.local.dao.FootballAppsDb
 import chirikualii.com.footballapps.data.local.dao.MatchDao
+import chirikualii.com.footballapps.data.local.dao.TeamDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -23,4 +24,8 @@ class DataModule {
     @Provides
     @Singleton
     fun provideMatchDao(db: FootballAppsDb) : MatchDao = db.matchDao()
+
+    @Provides
+    @Singleton
+    fun provieTeamDao(db: FootballAppsDb) : TeamDao = db.teamDao()
 }
