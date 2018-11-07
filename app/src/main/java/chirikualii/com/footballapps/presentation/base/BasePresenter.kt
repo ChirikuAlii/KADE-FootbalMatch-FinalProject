@@ -1,5 +1,6 @@
 package chirikualii.com.footballapps.presentation.base
 
+import chirikualii.com.footballapps.common.scheduler.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 
 /**
@@ -9,11 +10,11 @@ open class BasePresenter<T : BaseView> {
 
     protected val disposables = CompositeDisposable()
     protected var view: T? = null
-    // lateinit var scheduler : SchedulerProvider
+    lateinit var scheduler : SchedulerProvider
 
-    /*fun bindTest(scheduler: SchedulerProvider){
+    fun bindTest(scheduler: SchedulerProvider){
         this.scheduler = scheduler
-    }*/
+    }
     fun bind(view: T) {
         this.view = view
     }

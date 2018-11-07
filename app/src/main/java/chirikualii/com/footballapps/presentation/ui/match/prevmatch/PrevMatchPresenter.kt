@@ -19,8 +19,8 @@ class PrevMatchPresenter @Inject constructor(val repo : MatchRepo) : BasePresent
 
             disposables.add(
                 repo.loadPrevMatchList(leagueId)
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(scheduler.io())
+                    .observeOn(scheduler.ui())
                     .doOnComplete { view?.showProgress(false) }
                     .subscribe({
                         logD(TAG, "prev match list : ${toJsonElement(it)}")

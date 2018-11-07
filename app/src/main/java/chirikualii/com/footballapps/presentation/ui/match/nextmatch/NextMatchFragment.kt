@@ -12,6 +12,7 @@ import chirikualii.com.footballapps.common.ID_BUNDESLIGA
 import chirikualii.com.footballapps.common.ID_LA_LIGA
 import chirikualii.com.footballapps.common.ID_PREMIER_LEAGUE
 import chirikualii.com.footballapps.common.ID_SERIA_A
+import chirikualii.com.footballapps.common.scheduler.AppSchedulerProvider
 import chirikualii.com.footballapps.presentation.base.BaseFragment
 import chirikualii.com.footballapps.presentation.model.Match
 import chirikualii.com.footballapps.presentation.ui.adapter.RecyclerViewMatchAdapter
@@ -52,6 +53,7 @@ class NextMatchFragment : BaseFragment(), INextMatchView, AdapterView.OnItemSele
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.bind(this)
+        presenter.bindTest(AppSchedulerProvider())
         recyclerViewMatch.layoutManager = LinearLayoutManager(context)
         this.setupSpinner()
 

@@ -21,8 +21,8 @@ class NextMatchPresenter @Inject constructor(val repo: MatchRepo): BasePresenter
 
             disposables.add(
                 repo.loadNextMatchList(leagueId)
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(scheduler.io())
+                    .observeOn(scheduler.ui())
                     .doOnComplete { view?.showProgress(false) }
                     .subscribe({
                         logD(TAG, "next match list : ${toJsonElement(it)}")
