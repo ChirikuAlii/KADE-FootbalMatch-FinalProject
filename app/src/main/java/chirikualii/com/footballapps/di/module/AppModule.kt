@@ -1,4 +1,4 @@
-package chirikualii.com.footballapps.di
+package chirikualii.com.footballapps.di.module
 
 import android.app.Application
 import android.content.Context
@@ -35,5 +35,7 @@ class AppModule {
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
+
+
 
 }

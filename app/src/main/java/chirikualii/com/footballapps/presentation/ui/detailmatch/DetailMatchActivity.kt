@@ -2,26 +2,33 @@ package chirikualii.com.footballapps.presentation.ui.detailmatch
 
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.common.DATA_MATCH
 import chirikualii.com.footballapps.common.toDate
 import chirikualii.com.footballapps.presentation.base.BaseActivity
 import chirikualii.com.footballapps.presentation.model.Event
 import com.bumptech.glide.Glide
+
 import kotlinx.android.synthetic.main.activity_detail_match.*
+import kotlinx.android.synthetic.main.app_bar_main.*
+import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 class DetailMatchActivity : BaseActivity()  , IDetailMatchView {
 
+
     @Inject
     lateinit var presenter: DetailMatchPresenter
     lateinit var data: Event
+    var menu : Menu? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         injectActivity(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_match)
-
+        setSupportActionBar(toolbarLay)
         data = intent.getParcelableExtra(DATA_MATCH)
         presenter.bind(this)
         presenter.performLoadTeamBadge(data.idTeamHome, "Home")
@@ -44,6 +51,7 @@ class DetailMatchActivity : BaseActivity()  , IDetailMatchView {
         txtAwayFoward?.text = data.awayFoward
         txtAwayGoals?.text = data.awayDetailGoals
 
+
     }
 
     override fun showTeamBadgeHome(teamBadge: String?) {
@@ -58,16 +66,50 @@ class DetailMatchActivity : BaseActivity()  , IDetailMatchView {
             .into(imgAwayTeam)
     }
 
-    override fun showFavorite(isFavorite: Boolean) {
-
-    }
-
     override fun showMessage(message: String?) {
        toast(message.toString())
+
     }
 
     override fun showProgress(show: Boolean) {
 
+    }
+
+    override fun addedToFavorite() {
+        menu?.clear()
+        menuInflater.inflate(R.menu.menu_del_fav,menu)
+        toast("add favorite")
+
+    }
+
+    override fun deletedFromFavorite() {
+        menu?.clear()
+        menuInflater.inflate(R.menu.menu_add_fav,menu)
+        toast("del favorite")
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_add_fav,menu)
+        this.menu=menu
+        return super.onCreateOptionsMenu(menu)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId){
+            R.id.item_add_favorite-> {
+                presenter.performDeleteEvent(idEvent = data.idEvent)
+            }
+
+            R.id.item_del_favorite -> {
+                presenter.performInsertEvent(event = data)
+            }
+
+
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onDestroy() {

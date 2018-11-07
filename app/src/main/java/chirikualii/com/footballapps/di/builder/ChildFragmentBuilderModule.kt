@@ -1,4 +1,4 @@
-package chirikualii.com.footballapps.di
+package chirikualii.com.footballapps.di.builder
 
 import dagger.Module
 

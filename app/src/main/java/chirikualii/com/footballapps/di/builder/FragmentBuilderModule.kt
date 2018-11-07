@@ -1,4 +1,4 @@
-package chirikualii.com.footballapps.di
+package chirikualii.com.footballapps.di.builder
 
 import chirikualii.com.footballapps.presentation.ui.favorite.FavoriteFragment
 import chirikualii.com.footballapps.presentation.ui.match.MatchFragment
@@ -6,6 +6,8 @@ import chirikualii.com.footballapps.presentation.ui.match.nextmatch.NextMatchFra
 import chirikualii.com.footballapps.presentation.ui.match.prevmatch.PrevMatchFragment
 import chirikualii.com.footballapps.presentation.ui.teams.TeamsFragment
 import chirikualii.com.footballapps.presentation.ui.detailteam.playerteam.PlayerFragment
+import chirikualii.com.footballapps.presentation.ui.favorite.FavoriteMatchFragment
+import chirikualii.com.footballapps.presentation.ui.favorite.FavoriteTeamFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -31,4 +33,10 @@ abstract class FragmentBuilderModule {
 
     @ContributesAndroidInjector
     abstract fun bindPlayerFragment() : PlayerFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindFavoriteTeamFragment() : FavoriteTeamFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindFavoriteMatchFragment() : FavoriteMatchFragment
 }

@@ -1,4 +1,4 @@
-package chirikualii.com.footballapps.di
+package chirikualii.com.footballapps.di.builder
 
 import chirikualii.com.footballapps.presentation.ui.MainActivity
 import chirikualii.com.footballapps.presentation.ui.detailmatch.DetailMatchActivity

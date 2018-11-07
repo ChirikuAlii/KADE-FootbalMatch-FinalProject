@@ -2,7 +2,7 @@ package chirikualii.com.footballapps.presentation.ui.match
 
 import chirikualii.com.footballapps.common.logD
 import chirikualii.com.footballapps.common.toJsonElement
-import chirikualii.com.footballapps.data.repo.MatchRepo
+import chirikualii.com.footballapps.data.repo.EventsRepo
 import chirikualii.com.footballapps.presentation.base.BasePresenter
 import chirikualii.com.footballapps.presentation.model.Event
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -12,7 +12,7 @@ import javax.inject.Inject
 /**
  * Created by chirikualii on {DATE}
  */
-class MatchPresenter @Inject constructor(val repo : MatchRepo) : BasePresenter<IMatchView>(), IMatchPresenter {
+class MatchPresenter @Inject constructor(val repo : EventsRepo) : BasePresenter<IMatchView>(), IMatchPresenter {
 
     val TAG = MatchPresenter::class.java.simpleName
     val events = ArrayList<Event>()

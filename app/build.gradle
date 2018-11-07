@@ -83,7 +83,10 @@ dependencies {
 
     //room
     implementation "androidx.room:room-runtime:$archVersion"
+    implementation "android.arch.persistence.room:rxjava2:$archVersion"
     kapt "androidx.room:room-compiler:$archVersion"
+
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
 
     //unit testing
     testImplementation "junit:junit:$junitVersion"
