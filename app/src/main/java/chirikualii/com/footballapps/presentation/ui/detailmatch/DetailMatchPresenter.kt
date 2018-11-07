@@ -16,9 +16,9 @@ import javax.inject.Inject
  * Created by chirikualii on {DATE}
  */
 class DetailMatchPresenter @Inject constructor
-    (val repo:DetailMatchRepo, val matchRepo: MatchRepo, val dao: MatchDao): BasePresenter<IDetailMatchView>() ,IDetailMatchPresenter{
+    (val repo: DetailMatchRepo, val matchRepo: MatchRepo, val dao: MatchDao) : BasePresenter<IDetailMatchView>(),
+    IDetailMatchPresenter {
 
-    var message = ""
     val TAG = DetailMatchPresenter::class.java.simpleName
     override fun performLoadTeamBadge(idTeam: String?, key: String) {
 
@@ -50,7 +50,7 @@ class DetailMatchPresenter @Inject constructor
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     view?.savedAsFavorite(it)
-                },{
+                }, {
                     view?.showMessage(it.message)
                 })
         )
@@ -64,9 +64,9 @@ class DetailMatchPresenter @Inject constructor
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    logD(TAG,"InsertData Berhasil")
+                    logD(TAG, "InsertData Berhasil")
                     view?.addedToFavorite()
-                },{
+                }, {
                     view?.showMessage(it.message)
                 })
         )
@@ -81,17 +81,13 @@ class DetailMatchPresenter @Inject constructor
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-
-                    logD(TAG,"Delete Data Berhasil")
-
+                    logD(TAG, "Delete Data Berhasil")
                     view?.deletedFromFavorite()
-                },{
+                }, {
                     view?.showMessage(it.message)
                 })
         )
     }
-
-
 
 
 }

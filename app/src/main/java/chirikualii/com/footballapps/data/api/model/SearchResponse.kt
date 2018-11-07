@@ -6,5 +6,5 @@ import com.google.gson.annotations.SerializedName
  * Created by chirikualii on {DATE}
  */
 data class SearchResponse(
-    @SerializedName("event")var matches : List<MatchModel>
+    @SerializedName("event") var matches: List<MatchModel>
 )

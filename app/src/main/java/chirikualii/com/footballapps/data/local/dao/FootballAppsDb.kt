@@ -9,10 +9,10 @@ import chirikualii.com.footballapps.data.local.entity.TeamEntity
  * Created by chirikualii on {DATE}
  */
 @Database(
-    entities = [MatchEntity::class ,TeamEntity::class],version = 1
+    entities = [MatchEntity::class, TeamEntity::class], version = 1
 )
 abstract class FootballAppsDb : RoomDatabase() {
-    abstract fun matchDao() :MatchDao
+    abstract fun matchDao(): MatchDao
 
-    abstract fun teamDao() : TeamDao
+    abstract fun teamDao(): TeamDao
 }

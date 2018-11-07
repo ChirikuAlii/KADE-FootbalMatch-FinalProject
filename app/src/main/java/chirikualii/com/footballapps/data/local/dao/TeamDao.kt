@@ -15,11 +15,11 @@ interface TeamDao {
     @Insert
     fun insertTeam(team: TeamEntity)
 
-    @Query ("SELECT * FROM team_table")
-    fun getAllTeam() : List<TeamEntity>
+    @Query("SELECT * FROM team_table")
+    fun getAllTeam(): List<TeamEntity>
 
     @Query("DELETE FROM team_table WHERE idTeam = :idTeam")
-    fun deleteTeam(idTeam : String?)
+    fun deleteTeam(idTeam: String?)
 
     @Query("SELECT id , idTeam FROM team_table WHERE idTeam = :idTeam")
     fun checkTeamInDb(idTeam: String?): List<TeamEntity>

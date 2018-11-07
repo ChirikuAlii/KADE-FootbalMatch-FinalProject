@@ -15,15 +15,15 @@ import kotlinx.android.synthetic.main.item_match.view.*
 /**
  * Created by chirikualii on {DATE}
  */
-class RecyclerViewMatchAdapter(val matches : List<Match>) : RecyclerView.Adapter<RecyclerViewMatchAdapter.Holder>() {
+class RecyclerViewMatchAdapter(val matches: List<Match>) : RecyclerView.Adapter<RecyclerViewMatchAdapter.Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-       val view= LayoutInflater.from(parent.context).inflate(R.layout.item_match,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_match, parent, false)
 
         return Holder(view)
     }
 
     override fun getItemCount(): Int {
-       return matches.size
+        return matches.size
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
@@ -33,7 +33,7 @@ class RecyclerViewMatchAdapter(val matches : List<Match>) : RecyclerView.Adapter
 
     inner class Holder(view: View) : RecyclerView.ViewHolder(view) {
 
-        fun bind(match: Match){
+        fun bind(match: Match) {
             itemView.txtDateMatch?.text = match.dateMatch?.toDate()
 
             itemView.txtHomeTeamName?.text = match.homeTeamName

@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.common.DATA_KEY_RESULT_SEARCH
-import chirikualii.com.footballapps.common.MATCH
 import chirikualii.com.footballapps.common.DATA_RESULT_SEARCH
+import chirikualii.com.footballapps.common.MATCH
 import chirikualii.com.footballapps.common.TEAM
 import chirikualii.com.footballapps.presentation.base.BaseActivity
 import chirikualii.com.footballapps.presentation.model.Match
@@ -16,7 +16,7 @@ import chirikualii.com.footballapps.presentation.ui.adapter.RecyclerViewTeamAdap
 import kotlinx.android.synthetic.main.activity_result_search.*
 
 
-class ResultSearchActivity : BaseActivity(){
+class ResultSearchActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         injectActivity(this)
@@ -26,16 +26,16 @@ class ResultSearchActivity : BaseActivity(){
         val dataMatch = intent?.getParcelableArrayListExtra<Match>(DATA_RESULT_SEARCH)
         val dataTeams = intent?.getParcelableArrayListExtra<Team>(DATA_RESULT_SEARCH)
 
-        when(key){
+        when (key) {
 
-            MATCH ->{
+            MATCH -> {
                 recyclerViewMatch.apply {
                     layoutManager = LinearLayoutManager(this@ResultSearchActivity)
                     adapter = RecyclerViewMatchAdapter(dataMatch!!.toList())
                 }
             }
 
-            TEAM ->{
+            TEAM -> {
                 recyclerViewMatch.apply {
                     layoutManager = LinearLayoutManager(this@ResultSearchActivity)
                     adapter = RecyclerViewTeamAdapter(dataTeams!!.toList())
@@ -43,10 +43,6 @@ class ResultSearchActivity : BaseActivity(){
             }
 
         }
-
-
-
-
 
 
     }

@@ -6,6 +6,6 @@ import chirikualii.com.footballapps.presentation.model.Match
 /**
  * Created by chirikualii on {DATE}
  */
-interface IMatchView :BaseView {
-    fun navigateToResultSearchActivity(match : ArrayList<Match>)
+interface IMatchView : BaseView {
+    fun navigateToResultSearchActivity(match: ArrayList<Match>)
 }

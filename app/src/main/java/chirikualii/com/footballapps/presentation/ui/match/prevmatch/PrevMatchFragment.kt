@@ -22,15 +22,7 @@ import kotlinx.android.synthetic.main.fragment_list_match.*
 import org.jetbrains.anko.support.v4.toast
 import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- *
- */
 class PrevMatchFragment : BaseFragment(), IPrevMatchView, AdapterView.OnItemSelectedListener {
 
 

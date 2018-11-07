@@ -13,7 +13,7 @@ import javax.inject.Inject
 /**
  * Created by chirikualii on {DATE}
  */
-class BaseApp :Application() ,HasActivityInjector , HasSupportFragmentInjector {
+class BaseApp : Application(), HasActivityInjector, HasSupportFragmentInjector {
 
 
     @Inject
@@ -21,6 +21,7 @@ class BaseApp :Application() ,HasActivityInjector , HasSupportFragmentInjector {
 
     @Inject
     lateinit var supportFragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+
     override fun onCreate() {
         super.onCreate()
         DaggerAppComponnent.builder()
@@ -30,7 +31,7 @@ class BaseApp :Application() ,HasActivityInjector , HasSupportFragmentInjector {
     }
 
     override fun activityInjector(): AndroidInjector<Activity> {
-       return activityDispatchingAndroidInjector
+        return activityDispatchingAndroidInjector
     }
 
 

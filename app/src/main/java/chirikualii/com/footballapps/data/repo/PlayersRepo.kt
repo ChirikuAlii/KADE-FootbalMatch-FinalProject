@@ -8,9 +8,9 @@ import javax.inject.Inject
 /**
  * Created by chirikualii on {DATE}
  */
-class PlayersRepo @Inject constructor(val service : ApiService) {
+class PlayersRepo @Inject constructor(val service: ApiService) {
 
-    fun loadPlayersList(idTeam : String?) : Flowable<List<Player>>{
+    fun loadPlayersList(idTeam: String?): Flowable<List<Player>> {
         return service.getPlayersTeam(idTeam)
             .flatMap { Flowable.fromIterable(it.player) }
             .map {

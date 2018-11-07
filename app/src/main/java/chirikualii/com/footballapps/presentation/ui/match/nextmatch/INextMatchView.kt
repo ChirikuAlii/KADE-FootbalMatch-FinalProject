@@ -6,6 +6,6 @@ import chirikualii.com.footballapps.presentation.model.Match
 /**
  * Created by chirikualii on {DATE}
  */
-interface INextMatchView :BaseView {
+interface INextMatchView : BaseView {
     fun setOnSuccessLoad(match: List<Match>)
 }

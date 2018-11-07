@@ -7,5 +7,5 @@ import chirikualii.com.footballapps.presentation.model.Player
  * Created by chirikualii on {DATE}
  */
 interface IPlayerView : BaseView {
-    fun showPlayersList(players : List<Player>)
+    fun showPlayersList(players: List<Player>)
 }

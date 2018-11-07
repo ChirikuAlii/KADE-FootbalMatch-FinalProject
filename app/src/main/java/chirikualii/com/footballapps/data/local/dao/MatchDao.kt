@@ -1,6 +1,8 @@
 package chirikualii.com.footballapps.data.local.dao
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
 import chirikualii.com.footballapps.data.local.entity.MatchEntity
 
 
@@ -11,16 +13,16 @@ import chirikualii.com.footballapps.data.local.entity.MatchEntity
 interface MatchDao {
 
     @Insert
-    fun insertMatch(match : MatchEntity)
+    fun insertMatch(match: MatchEntity)
 
     @Query("SELECT * FROM match_table")
-    fun getAllMatch() : List<MatchEntity>
+    fun getAllMatch(): List<MatchEntity>
 
     @Query("DELETE FROM match_table WHERE idMatch = :idMatch ")
-    fun deleteMatch (idMatch: String?)
+    fun deleteMatch(idMatch: String?)
 
     @Query("SELECT id,idMatch FROM match_table WHERE idMatch = :idMatch")
-    fun checkDataMatch(idMatch :String?) : List<MatchEntity>
+    fun checkDataMatch(idMatch: String?): List<MatchEntity>
 
 
 }

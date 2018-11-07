@@ -15,21 +15,21 @@ import kotlinx.android.synthetic.main.item_team.view.*
 /**
  * Created by chirikualii on {DATE}
  */
-class RecyclerViewTeamAdapter(val teamList: List<Team>) : RecyclerView.Adapter<RecyclerViewTeamAdapter.Holder>()  {
+class RecyclerViewTeamAdapter(val teamList: List<Team>) : RecyclerView.Adapter<RecyclerViewTeamAdapter.Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-      val view = LayoutInflater.from(parent.context).inflate(R.layout.item_team,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_team, parent, false)
         return Holder(view)
     }
 
     override fun getItemCount(): Int {
-     return teamList.size
+        return teamList.size
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.bind(teamList[position])
     }
 
-    inner class Holder(view: View) : RecyclerView.ViewHolder(view){
+    inner class Holder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(team: Team) {
 
             itemView.txtTeamName?.text = team.teamName
@@ -40,8 +40,8 @@ class RecyclerViewTeamAdapter(val teamList: List<Team>) : RecyclerView.Adapter<R
 
             itemView.setOnClickListener {
                 //pindah halaman
-                Intent(itemView.context,DetailTeamActivity::class.java).apply {
-                    putExtra(DATA_TEAM,team)
+                Intent(itemView.context, DetailTeamActivity::class.java).apply {
+                    putExtra(DATA_TEAM, team)
                     itemView.context.startActivity(this)
 
                 }

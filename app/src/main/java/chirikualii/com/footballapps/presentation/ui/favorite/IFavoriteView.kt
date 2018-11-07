@@ -5,7 +5,7 @@ import chirikualii.com.footballapps.presentation.base.BaseView
 /**
  * Created by chirikualii on {DATE}
  */
-interface IFavoriteView :BaseView {
-    fun showFavorite(data : List<Any>)
+interface IFavoriteView : BaseView {
+    fun showFavorite(data: List<Any>)
 
 }

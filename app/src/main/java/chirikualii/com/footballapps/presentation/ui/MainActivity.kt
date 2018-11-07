@@ -23,26 +23,27 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
         setSupportActionBar(toolbarLay)
         bottom_navbar.setOnNavigationItemSelectedListener(this)
 
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.lay_container,MatchFragment(),"MatchFragment")
-                .commit()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.lay_container, MatchFragment(), "MatchFragment")
+            .commit()
 
 
     }
+
     override fun onNavigationItemSelected(menu: MenuItem): Boolean {
-        when (menu.itemId){
-            R.id.item_match ->{
+        when (menu.itemId) {
+            R.id.item_match -> {
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.lay_container,MatchFragment(),"MatchFragment")
+                    .replace(R.id.lay_container, MatchFragment(), "MatchFragment")
                     .commit()
                 return true
             }
-            R.id.item_team ->{
+            R.id.item_team -> {
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.lay_container,TeamsFragment(),"TeamFragment")
+                    .replace(R.id.lay_container, TeamsFragment(), "TeamFragment")
                     .commit()
 
                 return true
@@ -50,7 +51,7 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
             R.id.item_favorite -> {
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.lay_container,FavoriteFragment(),"FavoriteFragment")
+                    .replace(R.id.lay_container, FavoriteFragment(), "FavoriteFragment")
                     .commit()
                 return true
             }
@@ -60,8 +61,8 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_toolbar,menu)
-       // searchView = SearchView((this).supportActionBar?.themedContext ?: this)
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
+        // searchView = SearchView((this).supportActionBar?.themedContext ?: this)
 
 
         return super.onCreateOptionsMenu(menu)

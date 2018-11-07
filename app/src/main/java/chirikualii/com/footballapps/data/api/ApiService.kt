@@ -31,22 +31,23 @@ interface ApiService {
         @Query("id") idTeam: String?
     ): Flowable<TeamsResponse>
 
-    @GET("api/v1/json/"+BuildConfig.TSDB_API_KEY + "/lookup_all_teams.php")
+    @GET("api/v1/json/" + BuildConfig.TSDB_API_KEY + "/lookup_all_teams.php")
     fun getTeams(
-        @Query("id")idLeague : String?
+        @Query("id") idLeague: String?
     ): Flowable<TeamsResponse>
 
-    @GET("/api/v1/json/"+BuildConfig.TSDB_API_KEY +"/lookup_all_players.php")
+    @GET("/api/v1/json/" + BuildConfig.TSDB_API_KEY + "/lookup_all_players.php")
     fun getPlayersTeam(
-        @Query("id") idTeam :String?
-    ) : Flowable<PlayersResponse>
+        @Query("id") idTeam: String?
+    ): Flowable<PlayersResponse>
 
-    @GET("/api/v1/json/"+ BuildConfig.TSDB_API_KEY + "/searchevents.php")
+    @GET("/api/v1/json/" + BuildConfig.TSDB_API_KEY + "/searchevents.php")
     fun searchMatch(
-        @Query("e")query : String?
-    ) : Flowable<SearchResponse>
-    @GET("/api/v1/json/"+BuildConfig.TSDB_API_KEY + "/searchteams.php")
+        @Query("e") query: String?
+    ): Flowable<SearchResponse>
+
+    @GET("/api/v1/json/" + BuildConfig.TSDB_API_KEY + "/searchteams.php")
     fun searchTeam(
         @Query("t") query: String?
-    ) : Flowable<TeamsResponse>
+    ): Flowable<TeamsResponse>
 }

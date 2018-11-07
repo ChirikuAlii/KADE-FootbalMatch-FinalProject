@@ -11,7 +11,7 @@ import javax.inject.Inject
 /**
  * Created by chirikualii on {DATE}
  */
-abstract class BaseFragment : Fragment() , HasSupportFragmentInjector {
+abstract class BaseFragment : Fragment(), HasSupportFragmentInjector {
 
     @Inject
     lateinit var childFragment: DispatchingAndroidInjector<Fragment>
@@ -25,7 +25,7 @@ abstract class BaseFragment : Fragment() , HasSupportFragmentInjector {
         super.onAttach(context)
     }
 
-    fun injectFragment(fragment: Fragment){
+    fun injectFragment(fragment: Fragment) {
         AndroidSupportInjection.inject(fragment)
     }
 }

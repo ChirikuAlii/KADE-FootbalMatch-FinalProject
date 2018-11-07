@@ -12,11 +12,12 @@ import javax.inject.Inject
 /**
  * Created by chirikualii on {DATE}
  */
-class FavoritePresenter @Inject constructor(val matchRepo: MatchRepo, val teamsRepo: TeamsRepo):BasePresenter<IFavoriteView>() ,IFavoritePresenter {
+class FavoritePresenter @Inject constructor(val matchRepo: MatchRepo, val teamsRepo: TeamsRepo) :
+    BasePresenter<IFavoriteView>(), IFavoritePresenter {
     val TAG = FavoritePresenter::class.java.simpleName
-    override fun performLoadData(key :String?) {
+    override fun performLoadData(key: String?) {
 
-        when (key){
+        when (key) {
 
             FavoriteMatchFragment::class.java.simpleName -> {
                 disposables.add(
@@ -27,7 +28,7 @@ class FavoritePresenter @Inject constructor(val matchRepo: MatchRepo, val teamsR
                             logD(TAG, "Data match : ${toJsonElement(it)}")
                             view?.showFavorite(it)
 
-                        },{
+                        }, {
                             view?.showMessage(it.message)
                         })
                 )
@@ -39,9 +40,9 @@ class FavoritePresenter @Inject constructor(val matchRepo: MatchRepo, val teamsR
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe({
-                            logD(TAG,"Data team: ${toJsonElement(it)}")
+                            logD(TAG, "Data team: ${toJsonElement(it)}")
                             view?.showFavorite(it)
-                        },{
+                        }, {
                             view?.showMessage(it.message)
                         })
                 )

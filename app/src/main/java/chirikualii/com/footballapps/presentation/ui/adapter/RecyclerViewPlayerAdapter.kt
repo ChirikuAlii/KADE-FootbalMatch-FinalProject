@@ -15,11 +15,12 @@ import kotlinx.android.synthetic.main.item_player.view.*
 /**
  * Created by chirikualii on {DATE}
  */
-class RecyclerViewPlayerAdapter(val playerList :List<Player>) : RecyclerView.Adapter<RecyclerViewPlayerAdapter.Holder>() {
+class RecyclerViewPlayerAdapter(val playerList: List<Player>) :
+    RecyclerView.Adapter<RecyclerViewPlayerAdapter.Holder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view =LayoutInflater.from(parent.context).inflate(R.layout.item_player,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_player, parent, false)
         return Holder(view)
     }
 
@@ -31,7 +32,7 @@ class RecyclerViewPlayerAdapter(val playerList :List<Player>) : RecyclerView.Ada
         holder.bind(playerList[position])
     }
 
-    inner class Holder(view :View) : RecyclerView.ViewHolder(view) {
+    inner class Holder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(player: Player?) {
 
             Glide.with(itemView)
@@ -42,8 +43,8 @@ class RecyclerViewPlayerAdapter(val playerList :List<Player>) : RecyclerView.Ada
             itemView.txtPlayerPosition.text = player?.positionPlayer
 
             itemView.setOnClickListener {
-                Intent(itemView.context,DetailPlayerActivity::class.java).apply {
-                    putExtra(DATA_DETAIL_PLAYERS,player)
+                Intent(itemView.context, DetailPlayerActivity::class.java).apply {
+                    putExtra(DATA_DETAIL_PLAYERS, player)
                     itemView.context.startActivity(this)
                 }
             }

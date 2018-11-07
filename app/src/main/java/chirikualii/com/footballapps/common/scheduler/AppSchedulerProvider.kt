@@ -8,7 +8,7 @@ import io.reactivex.schedulers.Schedulers
  * Created by chirikualii on 11/8/18
  * github.com/chirikualii
  */
-class AppSchedulerProvider :SchedulerProvider {
+class AppSchedulerProvider : SchedulerProvider {
 
     override fun ui(): Scheduler {
         return AndroidSchedulers.mainThread()

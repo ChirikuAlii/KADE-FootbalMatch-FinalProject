@@ -1,13 +1,15 @@
 package chirikualii.com.footballapps.presentation.model
+
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
+
 /**
  * Created by chirikualii on {DATE}
  */
 
 
 @Parcelize
-data class Match (
+data class Match(
     val idLong: Long? = null,
     val idTeamHome: String? = "",
     val idTeamAway: String? = "",

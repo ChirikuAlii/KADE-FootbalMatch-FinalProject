@@ -25,6 +25,7 @@ import javax.inject.Inject
 class MatchFragment : BaseFragment(), IMatchView {
     @Inject
     lateinit var presenter: MatchPresenter
+
     override fun onAttach(context: Context?) {
         injectFragment(this)
         super.onAttach(context)
@@ -48,12 +49,14 @@ class MatchFragment : BaseFragment(), IMatchView {
             this?.title = getString(R.string.match)
             this?.navigationIcon = ResourcesCompat.getDrawable(resources, R.drawable.ic_arrow_back, null)
             this?.setNavigationOnClickListener {
-               activity?.onBackPressed()
+                activity?.onBackPressed()
 
             }
         }
-        viewPager.adapter = PagerAdapterMatch(childFragmentManager,NextMatchFragment(),PrevMatchFragment(), NEXT_MATCH,
-            PREV_MATCH)
+        viewPager.adapter = PagerAdapterMatch(
+            childFragmentManager, NextMatchFragment(), PrevMatchFragment(), NEXT_MATCH,
+            PREV_MATCH
+        )
         tabLayout.setupWithViewPager(viewPager)
     }
 
@@ -64,7 +67,7 @@ class MatchFragment : BaseFragment(), IMatchView {
             this!!.actionView = searchView
         }
 
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 presenter.performSearch(query)
                 return false
@@ -82,8 +85,8 @@ class MatchFragment : BaseFragment(), IMatchView {
 
 
     override fun navigateToResultSearchActivity(match: ArrayList<Match>) {
-        Intent(context,ResultSearchActivity::class.java).apply {
-            this.putParcelableArrayListExtra(DATA_RESULT_SEARCH,match)
+        Intent(context, ResultSearchActivity::class.java).apply {
+            this.putParcelableArrayListExtra(DATA_RESULT_SEARCH, match)
             this.putExtra(DATA_KEY_RESULT_SEARCH, MATCH)
             startActivity(this)
         }
@@ -102,10 +105,6 @@ class MatchFragment : BaseFragment(), IMatchView {
         super.onDestroy()
         presenter.destroy()
     }
-
-
-
-
 
 
 }

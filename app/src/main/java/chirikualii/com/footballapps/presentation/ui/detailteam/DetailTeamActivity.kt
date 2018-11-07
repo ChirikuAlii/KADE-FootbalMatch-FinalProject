@@ -110,7 +110,7 @@ class DetailTeamActivity : BaseActivity(), IDetailTeamView {
 
     override fun savedAsFavorite(isFavorite: Boolean) {
         val resMenu = if (isFavorite) R.menu.menu_del_fav else R.menu.menu_add_fav
-        menuInflater.inflate(resMenu,menu)
+        menuInflater.inflate(resMenu, menu)
     }
 
 

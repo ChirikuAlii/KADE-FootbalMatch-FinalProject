@@ -11,11 +11,11 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "team_table")
 data class TeamEntity(
     @PrimaryKey(autoGenerate = true)
-    var id : Int = 0,
+    var id: Int = 0,
     var idTeam: String? = "",
-    var teamName : String? = "",
+    var teamName: String? = "",
     var badgeTeam: String? = "",
-    var formedYear : String? = "",
-    var stadiumName : String? = "",
-    var overview : String? = ""
+    var formedYear: String? = "",
+    var stadiumName: String? = "",
+    var overview: String? = ""
 )

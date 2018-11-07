@@ -8,12 +8,12 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 data class Player(
-    val idPlayer : String? = "",
-    val namePlayer :String? = "",
-    val imgPlayer : String? = "",
+    val idPlayer: String? = "",
+    val namePlayer: String? = "",
+    val imgPlayer: String? = "",
     val weightPlayer: String? = "",
-    val heightPlayer: String? ="",
-    val overviewPlayer : String? = "",
-    val positionPlayer : String? = "",
-    val imgPosterPlayer : String? = ""
-):Parcelable
+    val heightPlayer: String? = "",
+    val overviewPlayer: String? = "",
+    val positionPlayer: String? = "",
+    val imgPosterPlayer: String? = ""
+) : Parcelable

@@ -1,7 +1,6 @@
 package chirikualii.com.footballapps.common
 
 import android.util.Log
-import androidx.appcompat.widget.SearchView
 import chirikualii.com.footballapps.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.JsonElement

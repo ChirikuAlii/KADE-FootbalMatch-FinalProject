@@ -4,99 +4,99 @@ import com.google.gson.annotations.SerializedName
 
 data class PlayerModel(
     @SerializedName("dateBorn")
-    val dateBorn: String?="",
+    val dateBorn: String? = "",
     @SerializedName("dateSigned")
-    val dateSigned: String? ="",
+    val dateSigned: String? = "",
     @SerializedName("idPlayer")
-    val idPlayer: String?="",
+    val idPlayer: String? = "",
     @SerializedName("idPlayerManager")
-    val idPlayerManager: String? ="",
+    val idPlayerManager: String? = "",
     @SerializedName("idSoccerXML")
-    val idSoccerXML: String?="",
+    val idSoccerXML: String? = "",
     @SerializedName("idTeam")
-    val idTeam: String?="",
+    val idTeam: String? = "",
     @SerializedName("intLoved")
-    val intLoved: String?="",
+    val intLoved: String? = "",
     @SerializedName("intSoccerXMLTeamID")
-    val intSoccerXMLTeamID: String?="",
+    val intSoccerXMLTeamID: String? = "",
     @SerializedName("strBanner")
-    val strBanner: String?="",
+    val strBanner: String? = "",
     @SerializedName("strBirthLocation")
-    val strBirthLocation: String?="",
+    val strBirthLocation: String? = "",
     @SerializedName("strCollege")
-    val strCollege: String?="",
+    val strCollege: String? = "",
     @SerializedName("strCutout")
-    val strCutout: String?="",
+    val strCutout: String? = "",
     @SerializedName("strDescriptionCN")
-    val strDescriptionCN: String?="",
+    val strDescriptionCN: String? = "",
     @SerializedName("strDescriptionDE")
-    val strDescriptionDE: String?="",
+    val strDescriptionDE: String? = "",
     @SerializedName("strDescriptionEN")
-    val strDescriptionEN: String?="",
+    val strDescriptionEN: String? = "",
     @SerializedName("strDescriptionES")
-    val strDescriptionES: String?="",
+    val strDescriptionES: String? = "",
     @SerializedName("strDescriptionFR")
-    val strDescriptionFR: String?="",
+    val strDescriptionFR: String? = "",
     @SerializedName("strDescriptionHU")
-    val strDescriptionHU: String?="",
+    val strDescriptionHU: String? = "",
     @SerializedName("strDescriptionIL")
-    val strDescriptionIL: String?="",
+    val strDescriptionIL: String? = "",
     @SerializedName("strDescriptionIT")
-    val strDescriptionIT: String?="",
+    val strDescriptionIT: String? = "",
     @SerializedName("strDescriptionJP")
-    val strDescriptionJP: String?="",
+    val strDescriptionJP: String? = "",
     @SerializedName("strDescriptionNL")
-    val strDescriptionNL: String?="",
+    val strDescriptionNL: String? = "",
     @SerializedName("strDescriptionNO")
-    val strDescriptionNO: String?="",
+    val strDescriptionNO: String? = "",
     @SerializedName("strDescriptionPL")
-    val strDescriptionPL: String?="",
+    val strDescriptionPL: String? = "",
     @SerializedName("strDescriptionPT")
-    val strDescriptionPT: String?="",
+    val strDescriptionPT: String? = "",
     @SerializedName("strDescriptionRU")
-    val strDescriptionRU: String?="",
+    val strDescriptionRU: String? = "",
     @SerializedName("strDescriptionSE")
-    val strDescriptionSE: String?="",
+    val strDescriptionSE: String? = "",
     @SerializedName("strFacebook")
-    val strFacebook: String?="",
+    val strFacebook: String? = "",
     @SerializedName("strFanart1")
-    val strFanart1: String?="",
+    val strFanart1: String? = "",
     @SerializedName("strFanart2")
-    val strFanart2: String?="",
+    val strFanart2: String? = "",
     @SerializedName("strFanart3")
-    val strFanart3: String?="",
+    val strFanart3: String? = "",
     @SerializedName("strFanart4")
-    val strFanart4: String?="",
+    val strFanart4: String? = "",
     @SerializedName("strGender")
-    val strGender: String?="",
+    val strGender: String? = "",
     @SerializedName("strHeight")
-    val strHeight: String?="",
+    val strHeight: String? = "",
     @SerializedName("strInstagram")
-    val strInstagram: String?="",
+    val strInstagram: String? = "",
     @SerializedName("strLocked")
-    val strLocked: String?="",
+    val strLocked: String? = "",
     @SerializedName("strNationality")
-    val strNationality: String?="",
+    val strNationality: String? = "",
     @SerializedName("strPlayer")
-    val strPlayer: String?="",
+    val strPlayer: String? = "",
     @SerializedName("strPosition")
-    val strPosition: String?="",
+    val strPosition: String? = "",
     @SerializedName("strSigning")
-    val strSigning: String?="",
+    val strSigning: String? = "",
     @SerializedName("strSport")
-    val strSport: String?="",
+    val strSport: String? = "",
     @SerializedName("strTeam")
-    val strTeam: String?="",
+    val strTeam: String? = "",
     @SerializedName("strThumb")
-    val strThumb: String?="",
+    val strThumb: String? = "",
     @SerializedName("strTwitter")
-    val strTwitter: String?="",
+    val strTwitter: String? = "",
     @SerializedName("strWage")
-    val strWage: String?="",
+    val strWage: String? = "",
     @SerializedName("strWebsite")
-    val strWebsite: String?="",
+    val strWebsite: String? = "",
     @SerializedName("strWeight")
-    val strWeight: String?="",
+    val strWeight: String? = "",
     @SerializedName("strYoutube")
-    val strYoutube: String?=""
+    val strYoutube: String? = ""
 )

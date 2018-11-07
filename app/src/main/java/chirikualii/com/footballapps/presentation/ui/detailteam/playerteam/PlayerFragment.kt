@@ -17,15 +17,17 @@ import kotlinx.android.synthetic.main.fragment_player.*
 import org.jetbrains.anko.support.v4.toast
 import javax.inject.Inject
 
-class PlayerFragment : BaseFragment() , IPlayerView {
+class PlayerFragment : BaseFragment(), IPlayerView {
 
     @Inject
     lateinit var presenter: PlayerPresenter
+    var data : String? = ""
     override fun onAttach(context: Context?) {
         injectFragment(this)
 
         super.onAttach(context)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,12 +39,8 @@ class PlayerFragment : BaseFragment() , IPlayerView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.bind(this)
-        val data =arguments?.getString(DATA_TEAM_PLAYERS)
-        toast(data.toString())
+        data = arguments?.getString(DATA_TEAM_PLAYERS)
         recyclerViewPlayer.layoutManager = LinearLayoutManager(context)
-        presenter.perfromLoadData(data)
-
-
 
     }
 
@@ -66,6 +64,6 @@ class PlayerFragment : BaseFragment() , IPlayerView {
 
     override fun onResume() {
         super.onResume()
-
+        presenter.perfromLoadData(data)
     }
 }

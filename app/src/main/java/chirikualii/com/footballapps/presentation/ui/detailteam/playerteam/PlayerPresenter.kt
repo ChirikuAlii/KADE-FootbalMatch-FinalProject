@@ -23,10 +23,10 @@ class PlayerPresenter @Inject constructor(val repo: PlayersRepo) : BasePresenter
                 .doOnComplete {
                     view?.showProgress(false)
                 }
-                .subscribe( {
-                    logD(TAG,"data player : ${toJsonElement(it)}")
+                .subscribe({
+                    logD(TAG, "data player : ${toJsonElement(it)}")
                     view?.showPlayersList(it)
-                },{
+                }, {
                     view?.showMessage(it.message)
                 })
         )

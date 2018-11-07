@@ -12,7 +12,7 @@ import javax.inject.Inject
 /**
  * Created by chirikualii on {DATE}
  */
-class MatchPresenter @Inject constructor(val repo : MatchRepo) : BasePresenter<IMatchView>(), IMatchPresenter {
+class MatchPresenter @Inject constructor(val repo: MatchRepo) : BasePresenter<IMatchView>(), IMatchPresenter {
 
     val TAG = MatchPresenter::class.java.simpleName
     val matches = ArrayList<Match>()
@@ -26,14 +26,14 @@ class MatchPresenter @Inject constructor(val repo : MatchRepo) : BasePresenter<I
                 .doOnComplete {
                     view?.showProgress(false)
                 }
-                .subscribe ({
-                    logD(TAG,"result search: ${toJsonElement(it)}")
-                    for (match in it){
+                .subscribe({
+                    logD(TAG, "result search: ${toJsonElement(it)}")
+                    for (match in it) {
                         matches.add(match)
                     }
                     view?.navigateToResultSearchActivity(matches)
                     matches.clear()
-                },{
+                }, {
                     view?.showMessage(it.message)
                 })
         )

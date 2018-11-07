@@ -4,15 +4,14 @@ package chirikualii.com.footballapps.presentation.ui.favorite
 import android.content.Context
 import android.os.Bundle
 import android.view.*
-
 import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.common.FAVORITE
 import chirikualii.com.footballapps.common.MATCH
 import chirikualii.com.footballapps.common.TEAM
 import chirikualii.com.footballapps.presentation.base.BaseFragment
 import chirikualii.com.footballapps.presentation.ui.adapter.PagerAdapterMatch
-import kotlinx.android.synthetic.main.fragment_favorite.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.fragment_favorite.*
 
 
 class FavoriteFragment : BaseFragment() {
@@ -22,6 +21,7 @@ class FavoriteFragment : BaseFragment() {
         injectFragment(this)
         super.onAttach(context)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,8 +45,10 @@ class FavoriteFragment : BaseFragment() {
                 activity?.onBackPressed()
             }
         }
-        viewPager.adapter = PagerAdapterMatch(childFragmentManager,FavoriteMatchFragment(),FavoriteTeamFragment(),
-            MATCH, TEAM)
+        viewPager.adapter = PagerAdapterMatch(
+            childFragmentManager, FavoriteMatchFragment(), FavoriteTeamFragment(),
+            MATCH, TEAM
+        )
         tabLayout.setupWithViewPager(viewPager)
     }
 

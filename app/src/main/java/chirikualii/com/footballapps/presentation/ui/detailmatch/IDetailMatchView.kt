@@ -8,8 +8,7 @@ import chirikualii.com.footballapps.presentation.base.BaseView
 interface IDetailMatchView : BaseView {
     fun showTeamBadgeHome(teamBadge: String?)
     fun showTeamBadgeAway(teamBadge: String?)
-
     fun addedToFavorite()
     fun deletedFromFavorite()
-    fun savedAsFavorite(isFavorite : Boolean)
+    fun savedAsFavorite(isFavorite: Boolean)
 }

@@ -17,15 +17,16 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideRoomDb( context: Context): FootballAppsDb =
-            Room.databaseBuilder(context,FootballAppsDb::class.java,"football.db")
-                .allowMainThreadQueries()
-                .build()
-    @Provides
-    @Singleton
-    fun provideMatchDao(db: FootballAppsDb) : MatchDao = db.matchDao()
+    fun provideRoomDb(context: Context): FootballAppsDb =
+        Room.databaseBuilder(context, FootballAppsDb::class.java, "football.db")
+            .allowMainThreadQueries()
+            .build()
 
     @Provides
     @Singleton
-    fun provieTeamDao(db: FootballAppsDb) : TeamDao = db.teamDao()
+    fun provideMatchDao(db: FootballAppsDb): MatchDao = db.matchDao()
+
+    @Provides
+    @Singleton
+    fun provieTeamDao(db: FootballAppsDb): TeamDao = db.teamDao()
 }

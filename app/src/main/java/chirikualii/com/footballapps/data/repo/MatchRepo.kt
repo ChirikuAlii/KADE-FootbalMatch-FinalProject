@@ -39,10 +39,6 @@ class MatchRepo @Inject constructor(val service: ApiService, val dao: MatchDao) 
                     awayFoward = it.strAwayLineupForward,
                     awayMidfield = it.strAwayLineupMidfield,
                     awayScore = it.intAwayScore
-
-
-
-
                 )
             }
             .toList()
@@ -73,13 +69,12 @@ class MatchRepo @Inject constructor(val service: ApiService, val dao: MatchDao) 
                     awayFoward = it.strAwayLineupForward,
                     awayMidfield = it.strAwayLineupMidfield,
                     awayScore = it.intAwayScore
-
                 )
             }
             .toList()
             .toFlowable()
 
-    fun loadResultSearch(query : String?) :Flowable<List<Match>>{
+    fun loadResultSearch(query: String?): Flowable<List<Match>> {
         return service.searchMatch(query)
             .flatMap { Flowable.fromIterable(it.matches) }
             .map {
@@ -103,17 +98,15 @@ class MatchRepo @Inject constructor(val service: ApiService, val dao: MatchDao) 
                     awayMidfield = it.strAwayLineupMidfield,
                     awayScore = it.intAwayScore
                 )
-
             }
             .toList()
             .toFlowable()
-
     }
 
-    fun loadMatchFavorite(): Flowable<List<Match>>{
+    fun loadMatchFavorite(): Flowable<List<Match>> {
         val data = dao.getAllMatch()
-        val result : ArrayList<Match> = ArrayList()
-        for (it in data){
+        val result: ArrayList<Match> = ArrayList()
+        for (it in data) {
             result.add(
                 Match(
                     idTeamHome = it.idTeamHome,
@@ -134,7 +127,6 @@ class MatchRepo @Inject constructor(val service: ApiService, val dao: MatchDao) 
                     awayFoward = it.awayFoward,
                     awayMidfield = it.awayMidfield,
                     awayScore = it.awayScore
-
                 )
             )
         }
@@ -142,36 +134,36 @@ class MatchRepo @Inject constructor(val service: ApiService, val dao: MatchDao) 
     }
 
     fun insertMatch(match: Match) {
-        return dao.insertMatch(match = MatchEntity(
-            idTeamHome = match.idTeamHome,
-            idTeamAway = match.idTeamAway,
-            dateMatch = match.dateMatch,
-            idMatch = match.idMatch,
-            homeTeamName = match.homeTeamName,
-            homeDefender = match.homeDefender,
-            homeGoalkepeer = match.homeGoalkepeer,
-            homeDetailGoals = match.homeDetailGoals,
-            homeFoward = match.homeFoward,
-            homeMidfield = match.homeMidfield,
-            homeScore = match.homeScore,
-            awayTeamName = match.awayTeamName,
-            awayDefender = match.awayDefender,
-            awayGoalkepeer = match.awayGoalkepeer,
-            awayDetailGoals = match.awayDetailGoals,
-            awayFoward = match.awayFoward,
-            awayMidfield = match.awayMidfield,
-            awayScore = match.awayScore
-        ))
-
+        return dao.insertMatch(
+            match = MatchEntity(
+                idTeamHome = match.idTeamHome,
+                idTeamAway = match.idTeamAway,
+                dateMatch = match.dateMatch,
+                idMatch = match.idMatch,
+                homeTeamName = match.homeTeamName,
+                homeDefender = match.homeDefender,
+                homeGoalkepeer = match.homeGoalkepeer,
+                homeDetailGoals = match.homeDetailGoals,
+                homeFoward = match.homeFoward,
+                homeMidfield = match.homeMidfield,
+                homeScore = match.homeScore,
+                awayTeamName = match.awayTeamName,
+                awayDefender = match.awayDefender,
+                awayGoalkepeer = match.awayGoalkepeer,
+                awayDetailGoals = match.awayDetailGoals,
+                awayFoward = match.awayFoward,
+                awayMidfield = match.awayMidfield,
+                awayScore = match.awayScore
+            )
+        )
     }
 
-    fun deleteMatch(idMatch: String?){
+    fun deleteMatch(idMatch: String?) {
         return dao.deleteMatch(idMatch)
     }
 
-    fun checkMatchInDb(idMatch: String?):Observable<Boolean> {
-       val result = dao.checkDataMatch(idMatch)
-
+    fun checkMatchInDb(idMatch: String?): Observable<Boolean> {
+        val result = dao.checkDataMatch(idMatch)
         return Observable.just(result.isNotEmpty())
     }
 

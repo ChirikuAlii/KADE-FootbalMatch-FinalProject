@@ -16,7 +16,7 @@ import org.jetbrains.anko.support.v4.toast
 import javax.inject.Inject
 
 
-class FavoriteTeamFragment : BaseFragment() , IFavoriteView {
+class FavoriteTeamFragment : BaseFragment(), IFavoriteView {
 
 
     @Inject
@@ -26,11 +26,12 @@ class FavoriteTeamFragment : BaseFragment() , IFavoriteView {
         injectFragment(this)
         super.onAttach(context)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_favorite_list,container,false)
+        return inflater.inflate(R.layout.fragment_favorite_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,12 +47,12 @@ class FavoriteTeamFragment : BaseFragment() , IFavoriteView {
     }
 
     override fun showMessage(message: String?) {
-       toast(message.toString())
+        toast(message.toString())
     }
 
     override fun showProgress(show: Boolean) {
         progressCircular.visibility = if (show) View.VISIBLE else View.GONE
-        recyclerViewMatch.visibility =if (show) View.GONE else View.VISIBLE
+        recyclerViewMatch.visibility = if (show) View.GONE else View.VISIBLE
     }
 
     override fun onResume() {

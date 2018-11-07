@@ -7,7 +7,7 @@ import chirikualii.com.footballapps.presentation.model.Team
  * github.com/chirikualii
  */
 interface IDetailTeamPresenter {
-    fun performInsertTeam(team:Team?)
+    fun performInsertTeam(team: Team?)
     fun performDeleteTeam(idTeam: String?)
     fun performCheckInDb(idTeam: String?)
 

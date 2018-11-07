@@ -11,7 +11,7 @@ import javax.inject.Inject
 /**
  * Created by chirikualii on {DATE}
  */
-class TeamsRepo @Inject constructor(val service: ApiService , val dao: TeamDao) {
+class TeamsRepo @Inject constructor(val service: ApiService, val dao: TeamDao) {
 
     fun loadTeams(idLeague: String): Flowable<List<Team>> {
 
@@ -33,7 +33,8 @@ class TeamsRepo @Inject constructor(val service: ApiService , val dao: TeamDao) 
             .toFlowable()
 
     }
-    fun loadResultSearch(query : String?) : Flowable<List<Team>> {
+
+    fun loadResultSearch(query: String?): Flowable<List<Team>> {
         return service.searchTeam(query)
             .flatMap {
                 Flowable.fromIterable(it.teamModels)
@@ -52,26 +53,28 @@ class TeamsRepo @Inject constructor(val service: ApiService , val dao: TeamDao) 
             .toFlowable()
     }
 
-    fun insertTeam (team: Team?){
-        return dao.insertTeam(team = TeamEntity(
-            idTeam = team?.idTeam,
-            badgeTeam = team?.badgeTeam,
-            formedYear = team?.formedYear,
-            stadiumName = team?.stadiumName,
-            overview = team?.overview,
-            teamName = team?.teamName
-        ))
+    fun insertTeam(team: Team?) {
+        return dao.insertTeam(
+            team = TeamEntity(
+                idTeam = team?.idTeam,
+                badgeTeam = team?.badgeTeam,
+                formedYear = team?.formedYear,
+                stadiumName = team?.stadiumName,
+                overview = team?.overview,
+                teamName = team?.teamName
+            )
+        )
     }
 
-    fun deleteTeam (idTeam :String?){
+    fun deleteTeam(idTeam: String?) {
         return dao.deleteTeam(idTeam)
     }
 
-    fun loadTeamFavorite () : Flowable<List<Team>>{
+    fun loadTeamFavorite(): Flowable<List<Team>> {
         val data = dao.getAllTeam()
-        val result : ArrayList<Team> = ArrayList()
+        val result: ArrayList<Team> = ArrayList()
 
-        for (it in data){
+        for (it in data) {
             result.add(
                 Team(
                     idTeam = it.idTeam,
@@ -80,12 +83,13 @@ class TeamsRepo @Inject constructor(val service: ApiService , val dao: TeamDao) 
                     stadiumName = it.stadiumName,
                     overview = it.overview,
                     teamName = it.teamName
-            ))
+                )
+            )
         }
         return Flowable.just(result.toList())
     }
 
-    fun checkTeamInDb(idTeam: String?):Observable<Boolean>{
+    fun checkTeamInDb(idTeam: String?): Observable<Boolean> {
         val result = dao.checkTeamInDb(idTeam)
 
         return Observable.just(result.isNotEmpty())

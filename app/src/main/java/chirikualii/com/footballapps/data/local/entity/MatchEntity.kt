@@ -8,13 +8,13 @@ import androidx.room.PrimaryKey
  * Created by chirikualii on {DATE}
  */
 
-@Entity (tableName = "match_table")
+@Entity(tableName = "match_table")
 data class MatchEntity(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    var id : Int =0,
+    @ColumnInfo(name = "id")
+    var id: Int = 0,
 
-    var idMatch : String? = "",
+    var idMatch: String? = "",
     var idTeamHome: String? = "",
     var idTeamAway: String? = "",
     var dateMatch: String? = "",

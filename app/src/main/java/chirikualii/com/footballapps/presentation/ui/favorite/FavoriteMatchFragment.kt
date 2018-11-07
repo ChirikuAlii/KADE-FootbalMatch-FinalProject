@@ -17,14 +17,16 @@ import org.jetbrains.anko.support.v4.toast
 import javax.inject.Inject
 
 
-class FavoriteMatchFragment : BaseFragment() , IFavoriteView {
+class FavoriteMatchFragment : BaseFragment(), IFavoriteView {
 
     @Inject
     lateinit var presenter: FavoritePresenter
+
     override fun onAttach(context: Context?) {
         injectFragment(this)
         super.onAttach(context)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,7 +44,7 @@ class FavoriteMatchFragment : BaseFragment() , IFavoriteView {
     }
 
     override fun showFavorite(data: List<Any>) {
-        recyclerViewMatch.adapter = RecyclerViewMatchAdapter(data.filterIsInstance<Match>() )
+        recyclerViewMatch.adapter = RecyclerViewMatchAdapter(data.filterIsInstance<Match>())
     }
 
     override fun showMessage(message: String?) {
@@ -51,14 +53,13 @@ class FavoriteMatchFragment : BaseFragment() , IFavoriteView {
 
     override fun showProgress(show: Boolean) {
         progressCircular.visibility = if (show) View.VISIBLE else View.GONE
-        recyclerViewMatch.visibility =if (show) View.GONE else View.VISIBLE
+        recyclerViewMatch.visibility = if (show) View.GONE else View.VISIBLE
     }
 
     override fun onResume() {
         super.onResume()
         presenter.performLoadData(key = FavoriteMatchFragment::class.java.simpleName)
     }
-
 
 
 }

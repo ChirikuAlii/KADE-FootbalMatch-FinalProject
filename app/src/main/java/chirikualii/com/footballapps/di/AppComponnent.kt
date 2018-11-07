@@ -26,10 +26,12 @@ import javax.inject.Singleton
 interface AppComponnent {
 
     @Component.Builder
-    interface Builder{
+    interface Builder {
         @BindsInstance
-        fun application (app:Application):Builder
-        fun build() : AppComponnent
+        fun application(app: Application): Builder
+
+        fun build(): AppComponnent
     }
-        fun inject(app:BaseApp)
+
+    fun inject(app: BaseApp)
 }

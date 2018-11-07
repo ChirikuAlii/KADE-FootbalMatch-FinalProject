@@ -9,9 +9,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Team(
     val idTeam: String? = "",
-    val teamName : String? = "",
+    val teamName: String? = "",
     val badgeTeam: String? = "",
-    val formedYear : String? = "",
-    val stadiumName : String? = "",
-    val overview : String? = ""
+    val formedYear: String? = "",
+    val stadiumName: String? = "",
+    val overview: String? = ""
 ) : Parcelable
