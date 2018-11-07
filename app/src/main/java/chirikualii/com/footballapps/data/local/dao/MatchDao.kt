@@ -16,11 +16,11 @@ interface MatchDao {
     @Query("SELECT * FROM match_table")
     fun getAllMatch() : List<MatchEntity>
 
-    @Query("DELETE FROM match_table WHERE idEvent = :idEvent ")
-    fun deleteMatch (idEvent: String?)
+    @Query("DELETE FROM match_table WHERE idMatch = :idMatch ")
+    fun deleteMatch (idMatch: String?)
 
-    @Query("SELECT id,idEvent FROM match_table WHERE idEvent = :idEvent")
-    fun checkDataMatch(idEvent :String?) : List<MatchEntity>
+    @Query("SELECT id,idMatch FROM match_table WHERE idMatch = :idMatch")
+    fun checkDataMatch(idMatch :String?) : List<MatchEntity>
 
 
 }

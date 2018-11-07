@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.presentation.base.BaseFragment
-import chirikualii.com.footballapps.presentation.model.Event
+import chirikualii.com.footballapps.presentation.model.Match
 import chirikualii.com.footballapps.presentation.ui.adapter.RecyclerViewMatchAdapter
 import kotlinx.android.synthetic.main.fragment_favorite_list.*
 import org.jetbrains.anko.support.v4.toast
@@ -42,7 +42,7 @@ class FavoriteMatchFragment : BaseFragment() , IFavoriteView {
     }
 
     override fun showFavorite(data: List<Any>) {
-        recyclerViewMatch.adapter = RecyclerViewMatchAdapter(data.filterIsInstance<Event>() )
+        recyclerViewMatch.adapter = RecyclerViewMatchAdapter(data.filterIsInstance<Match>() )
     }
 
     override fun showMessage(message: String?) {

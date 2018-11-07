@@ -4,19 +4,14 @@ package chirikualii.com.footballapps.presentation.ui.favorite
 import android.content.Context
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 
 import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.common.FAVORITE
 import chirikualii.com.footballapps.common.MATCH
-import chirikualii.com.footballapps.common.NEXT_MATCH
 import chirikualii.com.footballapps.common.TEAM
-import chirikualii.com.footballapps.data.repo.EventsRepo
 import chirikualii.com.footballapps.presentation.base.BaseFragment
-import chirikualii.com.footballapps.presentation.model.Event
 import chirikualii.com.footballapps.presentation.ui.adapter.PagerAdapterMatch
 import kotlinx.android.synthetic.main.fragment_favorite.*
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 

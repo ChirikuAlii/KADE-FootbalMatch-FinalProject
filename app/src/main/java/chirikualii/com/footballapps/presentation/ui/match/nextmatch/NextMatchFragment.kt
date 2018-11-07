@@ -13,11 +13,10 @@ import chirikualii.com.footballapps.common.ID_LA_LIGA
 import chirikualii.com.footballapps.common.ID_PREMIER_LEAGUE
 import chirikualii.com.footballapps.common.ID_SERIA_A
 import chirikualii.com.footballapps.presentation.base.BaseFragment
-import chirikualii.com.footballapps.presentation.model.Event
+import chirikualii.com.footballapps.presentation.model.Match
 import chirikualii.com.footballapps.presentation.ui.adapter.RecyclerViewMatchAdapter
 import kotlinx.android.synthetic.main.fragment_list_match.*
 import org.jetbrains.anko.support.v4.toast
-import kotlinx.android.synthetic.main.app_bar_main.*
 import javax.inject.Inject
 
 // TODO: Rename parameter arguments, choose names that match
@@ -77,8 +76,8 @@ class NextMatchFragment : BaseFragment(), INextMatchView, AdapterView.OnItemSele
         recyclerViewMatch.visibility = if (show) View.GONE else View.VISIBLE
     }
 
-    override fun setOnSuccessLoad(event: List<Event>) {
-        recyclerViewMatch.adapter = RecyclerViewMatchAdapter(event)
+    override fun setOnSuccessLoad(match: List<Match>) {
+        recyclerViewMatch.adapter = RecyclerViewMatchAdapter(match)
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {

@@ -2,8 +2,7 @@ package chirikualii.com.footballapps.presentation.ui.favorite
 
 import chirikualii.com.footballapps.common.logD
 import chirikualii.com.footballapps.common.toJsonElement
-import chirikualii.com.footballapps.data.local.dao.MatchDao
-import chirikualii.com.footballapps.data.repo.EventsRepo
+import chirikualii.com.footballapps.data.repo.MatchRepo
 import chirikualii.com.footballapps.data.repo.TeamsRepo
 import chirikualii.com.footballapps.presentation.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -13,7 +12,7 @@ import javax.inject.Inject
 /**
  * Created by chirikualii on {DATE}
  */
-class FavoritePresenter @Inject constructor(val eventsRepo: EventsRepo,val teamsRepo: TeamsRepo):BasePresenter<IFavoriteView>() ,IFavoritePresenter {
+class FavoritePresenter @Inject constructor(val matchRepo: MatchRepo, val teamsRepo: TeamsRepo):BasePresenter<IFavoriteView>() ,IFavoritePresenter {
     val TAG = FavoritePresenter::class.java.simpleName
     override fun performLoadData(key :String?) {
 
@@ -21,7 +20,7 @@ class FavoritePresenter @Inject constructor(val eventsRepo: EventsRepo,val teams
 
             FavoriteMatchFragment::class.java.simpleName -> {
                 disposables.add(
-                    eventsRepo.loadMatchFavorite()
+                    matchRepo.loadMatchFavorite()
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe({

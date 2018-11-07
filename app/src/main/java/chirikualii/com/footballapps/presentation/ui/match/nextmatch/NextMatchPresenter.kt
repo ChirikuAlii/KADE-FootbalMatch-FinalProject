@@ -2,7 +2,7 @@ package chirikualii.com.footballapps.presentation.ui.match.nextmatch
 
 import chirikualii.com.footballapps.common.logD
 import chirikualii.com.footballapps.common.toJsonElement
-import chirikualii.com.footballapps.data.repo.EventsRepo
+import chirikualii.com.footballapps.data.repo.MatchRepo
 import chirikualii.com.footballapps.presentation.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -11,7 +11,7 @@ import javax.inject.Inject
 /**
  * Created by chirikualii on {DATE}
  */
-class NextMatchPresenter @Inject constructor(val repo: EventsRepo): BasePresenter<INextMatchView>(),
+class NextMatchPresenter @Inject constructor(val repo: MatchRepo): BasePresenter<INextMatchView>(),
     INextMatchPresenter {
     private val TAG = NextMatchPresenter::class.java.simpleName.toString()
     override fun performLoadData(leagueId : String) {

@@ -8,7 +8,7 @@ import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.common.DATA_MATCH
 import chirikualii.com.footballapps.common.toDate
 import chirikualii.com.footballapps.presentation.base.BaseActivity
-import chirikualii.com.footballapps.presentation.model.Event
+import chirikualii.com.footballapps.presentation.model.Match
 import com.bumptech.glide.Glide
 
 import kotlinx.android.synthetic.main.activity_detail_match.*
@@ -20,7 +20,7 @@ class DetailMatchActivity : BaseActivity()  , IDetailMatchView {
 
     @Inject
     lateinit var presenter: DetailMatchPresenter
-    lateinit var data: Event
+    lateinit var data: Match
     var menu : Menu? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         injectActivity(this)
@@ -97,7 +97,7 @@ class DetailMatchActivity : BaseActivity()  , IDetailMatchView {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         this.menu=menu
-        presenter.performCheckDataInDb(data.idEvent ?: "")
+        presenter.performCheckDataInDb(data.idMatch ?: "")
         return super.onCreateOptionsMenu(menu)
 
     }
@@ -105,11 +105,11 @@ class DetailMatchActivity : BaseActivity()  , IDetailMatchView {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId){
             R.id.item_add_favorite-> {
-                presenter.performDeleteEvent(idEvent = data.idEvent)
+                presenter.performDeleteMatch(idMatch = data.idMatch)
             }
 
             R.id.item_del_favorite -> {
-                presenter.performInsertEvent(event = data)
+                presenter.performInsertMatch(match = data)
             }
 
 

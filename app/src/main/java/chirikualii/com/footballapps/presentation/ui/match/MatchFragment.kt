@@ -10,13 +10,12 @@ import androidx.core.content.res.ResourcesCompat
 import chirikualii.com.footballapps.R
 import chirikualii.com.footballapps.common.*
 import chirikualii.com.footballapps.presentation.base.BaseFragment
-import chirikualii.com.footballapps.presentation.model.Event
+import chirikualii.com.footballapps.presentation.model.Match
 import chirikualii.com.footballapps.presentation.ui.MainActivity
 import chirikualii.com.footballapps.presentation.ui.adapter.PagerAdapterMatch
 import chirikualii.com.footballapps.presentation.ui.match.nextmatch.NextMatchFragment
 import chirikualii.com.footballapps.presentation.ui.match.prevmatch.PrevMatchFragment
 import chirikualii.com.footballapps.presentation.ui.resultsearch.ResultSearchActivity
-import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_match.*
 import org.jetbrains.anko.support.v4.toast
@@ -82,9 +81,9 @@ class MatchFragment : BaseFragment(), IMatchView {
     }
 
 
-    override fun navigateToResultSearchActivity(event: ArrayList<Event>) {
+    override fun navigateToResultSearchActivity(match: ArrayList<Match>) {
         Intent(context,ResultSearchActivity::class.java).apply {
-            this.putParcelableArrayListExtra(DATA_RESULT_SEARCH,event)
+            this.putParcelableArrayListExtra(DATA_RESULT_SEARCH,match)
             this.putExtra(DATA_KEY_RESULT_SEARCH, MATCH)
             startActivity(this)
         }

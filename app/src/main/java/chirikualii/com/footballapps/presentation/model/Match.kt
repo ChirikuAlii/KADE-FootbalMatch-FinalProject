@@ -7,11 +7,11 @@ import kotlinx.android.parcel.Parcelize
 
 
 @Parcelize
-data class Event (
+data class Match (
     val idLong: Long? = null,
     val idTeamHome: String? = "",
     val idTeamAway: String? = "",
-    val idEvent: String? = "",
+    val idMatch: String? = "",
     val dateMatch: String? = "",
     val homeTeamName: String? = "",
     val homeScore: String? = "",

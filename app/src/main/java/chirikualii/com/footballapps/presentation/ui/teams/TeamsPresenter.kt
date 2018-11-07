@@ -2,7 +2,6 @@ package chirikualii.com.footballapps.presentation.ui.teams
 
 import chirikualii.com.footballapps.common.logD
 import chirikualii.com.footballapps.common.toJsonElement
-import chirikualii.com.footballapps.data.repo.MatchRepo
 import chirikualii.com.footballapps.data.repo.TeamsRepo
 import chirikualii.com.footballapps.presentation.base.BasePresenter
 import chirikualii.com.footballapps.presentation.model.Team

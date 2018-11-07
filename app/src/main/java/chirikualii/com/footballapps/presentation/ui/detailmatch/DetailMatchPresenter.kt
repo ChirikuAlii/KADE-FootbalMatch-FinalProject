@@ -4,10 +4,9 @@ import chirikualii.com.footballapps.common.logD
 import chirikualii.com.footballapps.common.toJsonElement
 import chirikualii.com.footballapps.data.local.dao.MatchDao
 import chirikualii.com.footballapps.data.repo.DetailMatchRepo
-import chirikualii.com.footballapps.data.repo.EventsRepo
+import chirikualii.com.footballapps.data.repo.MatchRepo
 import chirikualii.com.footballapps.presentation.base.BasePresenter
-import chirikualii.com.footballapps.presentation.model.Event
-import io.reactivex.Flowable
+import chirikualii.com.footballapps.presentation.model.Match
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -17,7 +16,7 @@ import javax.inject.Inject
  * Created by chirikualii on {DATE}
  */
 class DetailMatchPresenter @Inject constructor
-    (val repo:DetailMatchRepo, val eventRepo: EventsRepo, val dao: MatchDao): BasePresenter<IDetailMatchView>() ,IDetailMatchPresenter{
+    (val repo:DetailMatchRepo, val matchRepo: MatchRepo, val dao: MatchDao): BasePresenter<IDetailMatchView>() ,IDetailMatchPresenter{
 
     var message = ""
     val TAG = DetailMatchPresenter::class.java.simpleName
@@ -44,9 +43,9 @@ class DetailMatchPresenter @Inject constructor
         )
     }
 
-    override fun performCheckDataInDb(idEvent: String?) {
+    override fun performCheckDataInDb(idMatch: String?) {
         disposables.add(
-            eventRepo.checkEventInDb(idEvent)
+            matchRepo.checkMatchInDb(idMatch)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
@@ -57,10 +56,10 @@ class DetailMatchPresenter @Inject constructor
         )
     }
 
-    override fun performInsertEvent(event: Event?) {
+    override fun performInsertMatch(match: Match?) {
         disposables.add(
             Observable.fromCallable {
-                eventRepo.insertMatch(event!!)
+                matchRepo.insertMatch(match!!)
             }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -74,10 +73,10 @@ class DetailMatchPresenter @Inject constructor
 
     }
 
-    override fun performDeleteEvent(idEvent: String?) {
+    override fun performDeleteMatch(idMatch: String?) {
         disposables.add(
             Observable.fromCallable {
-                eventRepo.deleteMatch(idEvent)
+                matchRepo.deleteMatch(idMatch)
             }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

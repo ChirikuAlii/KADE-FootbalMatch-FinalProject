@@ -1,12 +1,11 @@
 package chirikualii.com.footballapps.data.api
 
 import chirikualii.com.footballapps.BuildConfig
-import chirikualii.com.footballapps.data.api.model.EventResponse
+import chirikualii.com.footballapps.data.api.model.MatchResponse
 import chirikualii.com.footballapps.data.api.model.PlayersResponse
 import chirikualii.com.footballapps.data.api.model.SearchResponse
 import chirikualii.com.footballapps.data.api.model.TeamsResponse
 import io.reactivex.Flowable
-import org.intellij.lang.annotations.Flow
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -19,12 +18,12 @@ interface ApiService {
     fun getUpcomingMatch(
         @Query("id") id: String?
 
-    ): Flowable<EventResponse>
+    ): Flowable<MatchResponse>
 
     @GET("api/v1/json/" + BuildConfig.TSDB_API_KEY + "/eventspastleague.php")
     fun getPasthMatch(
         @Query("id") id: String?
-    ): Flowable<EventResponse>
+    ): Flowable<MatchResponse>
 
 
     @GET("api/v1/json/" + BuildConfig.TSDB_API_KEY + "/lookupteam.php")

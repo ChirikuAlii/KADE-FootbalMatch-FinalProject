@@ -14,7 +14,7 @@ data class MatchEntity(
     @ColumnInfo(name="id")
     var id : Int =0,
 
-    var idEvent : String? = "",
+    var idMatch : String? = "",
     var idTeamHome: String? = "",
     var idTeamAway: String? = "",
     var dateMatch: String? = "",
